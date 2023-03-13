@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    justify-content: flex-end;
+    margin-right: 100px;
+  }
+
+  .navbar {
+    background-color: #317586;
+  }
+  
+  .nav-item {
+    margin-right: 30px;
+  }
+
+  .main {
+    padding-top: 30px;
+    padding-bottom: 150px;
+    background-color: #ececee;
+  }
+  
+  article {
+    margin-top: 30px;
+    text-align: center;
+    color: #317586;
+  }
+
+  .card {
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+  input[type="text"] {
+    width: 30px;
+    height: 40px;
+}
+
+input[type="submit"] {
+    background-color: #317586;
+}
+
+  .footer {
+    background-color: #317586;
+  }
