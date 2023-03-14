@@ -14,7 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>  
-    <title>VALIDAZIONE</title>
+    <title>{{title}}</title>
     <link rel="icon" type="image/x-icon" href="assets/images/logo_small.png">
 
 </head>
@@ -36,21 +36,15 @@
           <div class="menu collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">SIGN IN</a>
+                <a class="nav-link" aria-current="page" href="#" id="signIn">{{signIn}}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">LOG IN</a>
+                <a class="nav-link" href="#" id="logIn">{{logIn}}</a>
               </li>
               <li class="nav-item dropdown">
 
-                <a class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-mdb-toggle="dropdown"
-                  aria-expanded="false">
-
-                  <i class="flag-united-kingdom flag m-0"></i>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                 <i class="flag-united-kingdom flag m-0"></i>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
@@ -76,17 +70,17 @@
 
      <article class="container">
 
-        <h1><b> VALIDAZIONE </b></h1>
-        <h2> hai quasi finito </h2>
+        <h1 id="title"><b> {{title}} </b></h1>
+        <h2 id="subTitle"> {{subTitle}} </h2>
    
 
         <div class="card text-center" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title"><b>Digita il tuo codice</b></h5>
-              <p class="card-text">Abbiamo inviato un codice a 0039....434</p>
+              <h5 class="card-title" id="cardTitle"><b> {{cardTitle}} </b></h5>
+              <p class="card-text" id="cardSubTitle"> {{cardSubTitle}} </p>
 
               <form method="post" action="">
-                <label for="code">Inserisci il codice di autenticazione a 6 cifre</label>
+                <label for="code" id="codeText"> {{codeText}} </label>
                 <br>
                 <br>
                 <input type="text" id="code1" name="code1" maxlength="1" size="1" pattern="[0-9]" required autofocus>
@@ -116,30 +110,8 @@
   
       <!-- Section: Text -->
       <section class="mb-4">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-          distinctio earum repellat quaerat voluptatibus placeat nam,
-          commodi optio pariatur est quia magnam eum harum corrupti dicta,
-          aliquam sequi voluptate quas.
+        <p id="footerText"> {{footerText}} 
         </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-            distinctio earum repellat quaerat voluptatibus placeat nam,
-            commodi optio pariatur est quia magnam eum harum corrupti dicta,
-            aliquam sequi voluptate quas.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-            distinctio earum repellat quaerat voluptatibus placeat nam,
-            commodi optio pariatur est quia magnam eum harum corrupti dicta,
-            aliquam sequi voluptate quas.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-            distinctio earum repellat quaerat voluptatibus placeat nam,
-            commodi optio pariatur est quia magnam eum harum corrupti dicta,
-            aliquam sequi voluptate quas.
-          </p>
       </section>
       <!-- Section: Text -->
   
@@ -155,36 +127,6 @@
   
   </footer>
 
-  <script>
-    // Abilita solo l'input numerico
-    const inputs = document.querySelectorAll("input[type='text']");
-    inputs.forEach((input, index) => {
-        input.addEventListener('input', function(){
-            this.value = this.value.replace(/[^0-9]/g,'');
-            if (this.value.length == 1 && index < inputs.length - 1) {
-                inputs[index + 1].focus();
-            }
-        });
-    });
-
-    // Aggiunge la validazione all'invio del form
-    document.querySelector("form").addEventListener("submit", function(event) {
-        event.preventDefault();
-        const code1 = document.getElementById("code1").value;
-        const code2 = document.getElementById("code2").value;
-        const code3 = document.getElementById("code3").value;
-        const code4 = document.getElementById("code4").value;
-        const code5 = document.getElementById("code5").value;
-        const code6 = document.getElementById("code6").value;
-        const code = code1 + code2 + code3 + code4 + code5 + code6;
-        if (code.length !== 6 || isNaN(code)) {
-            document.getElementById("error_message").innerHTML = "Il codice di autenticazione non è valido";
-        } else {
-            document.getElementById("error_message").innerHTML = "";
-            this.submit();
-        }
-    });
-</script>
 </body>
 
 </html>
